@@ -16,3 +16,31 @@ Jacobian Saliency Map Attackを実装したもの。
 ## CandW.ipynb
 C&W攻撃の論文を実装したもの。
 出力値に注目して、攻撃を行うもの。元画像との差異を小さくしつつ、ターゲットの出力が最大化されるように最適化問題を解くことで画像を生成する。
+
+## my_attack_model.ipynb
+自作の畳み込みオートエンコーダーを作って、ノイズを加えてみたもの。具体的には、誤判定させたいターゲットを定めて、それに対するロスがすくなるようにする。このとき、ノイズのL1ノルムも考慮する。
+
+# 出力例
+## FGSM
+![FGSM_output](https://user-images.githubusercontent.com/64346532/236625752-f969394c-2730-4969-9a6d-504289a12466.png)
+## JSMA
+6が2に誤判定されたときの出力
+
+![JSMA_output](https://user-images.githubusercontent.com/64346532/236626091-dc2b6212-3ad9-48c9-b420-28a10ede6f70.png)
+
+## C&W
+0が1に誤判定されたときの出力
+
+![output_CandW](https://user-images.githubusercontent.com/64346532/236625945-63b478bd-3721-4443-ae70-a3a3fe095394.png)
+
+## 自作モデル
+0が1と誤判定されたときの出力
+
+![mymodel_before](https://user-images.githubusercontent.com/64346532/236626025-36f828ff-7676-4e71-8e65-3330600efa6c.png)
+
+![mymodel_after](https://user-images.githubusercontent.com/64346532/236626060-7a1827c2-9c2e-432f-a16b-82ffc531cbf6.png)
+
+
+
+
+
